@@ -46,8 +46,8 @@
           <ul className="list-inside list-disc space-y-2 text-gray-600">
             <ol type="1" className="list-decimal pl-5 marker:text-black-700 marker:font-bold">
             <li className="font-normal">.Memahami tentang <strong>Web Developer</strong> terlebih dahulu</li>
-            <li className="font-normal">.Lulus dari kelas Industri Ubig selama <strong>4 Semester</strong></li>
-            <li className="font-normal">.Setelah mahir Web Developer saya akan langsung mempeljari <strong>Cyber Scurity</strong></li>
+            <li className="font-normal">.Bekerja Sebagai Web Developer</li>
+            <li className="font-normal">.Magang Di Perusahaan teknologi</li>
             </ol>
           </ul>
         </div>
