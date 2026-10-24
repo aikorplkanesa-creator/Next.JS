@@ -45,7 +45,7 @@
              Langkah yang saya rencanakan:</p><br></br>
           <ul className="list-inside list-disc space-y-2 text-gray-600">
             <ol type="1" className="list-decimal pl-5 marker:text-black-700 marker:font-bold">
-            <li className="font-normal">.Memahami tentang <strong>Web Developer</strong> terlebih dahulu</li>
+            <li className="font-normal">.menuntaskan Kelas Industri UBIG sampai semester 4</li>
             <li className="font-normal">.Bekerja Sebagai Web Developer</li>
             <li className="font-normal">.Magang Di Perusahaan teknologi</li>
             </ol>
