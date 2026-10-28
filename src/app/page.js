@@ -99,10 +99,6 @@
         </div>
       </section>
       </main>
-      <footer className="mt-6 bg-footer px-5 py-5 text-center text-xs text-footer-teks text-utama text-white">
-        © 2026 Muhammad Aiko Anail Adi. Dibuat dengan Next.js di Kelas
-        Industri UBIG.
-      </footer>
     </>
   );
 }
