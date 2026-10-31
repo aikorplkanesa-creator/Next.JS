@@ -3,7 +3,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { proyek } from "@/data/proyek";
 
-// Generator Metadata agar judul tab sesuai dengan nama proyek
 export async function generateMetadata({ params }) {
     const { slug } = await params;
     const item = proyek.find((p) => p.slug === slug);

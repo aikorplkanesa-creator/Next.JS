@@ -12,6 +12,7 @@ export default function kontak() {
 
             <div className="grid gap-6 md:grid-cols-3 w-full">
 
+                
          
                 <section className="rounded-2xl border border-gray-200 bg-white p-6 md:p-8 shadow-sm md:col-span-2">
 
@@ -134,6 +135,7 @@ export default function kontak() {
                 </section>
 
 
+
                 <section className="rounded-2xl border border-gray-200 bg-white p-6 md:p-8 shadow-sm flex flex-col justify-between">
                     <div>
                         <h2 className="mb-6 text-xl font-bold text-utama">
@@ -172,9 +174,12 @@ export default function kontak() {
                     <div className="mt-8 pt-4 border-t border-gray-150 text-xs text-gray-400 hidden md:block">
                         Tanggapan biasanya dikirim dalam 1x24 jam.
                     </div>
+                    
+     
                 </section>
 
             </div>
+
 
         </main>
     );

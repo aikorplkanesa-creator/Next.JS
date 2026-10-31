@@ -36,6 +36,16 @@ export default function keahlian() {
         </div>
       </section>
 
+      <section className="mr-170">
+          <div className="pt-4 border-t border-gray-600">
+            <Link
+            href="/"
+            className="inline-nlock bg-black text-white text-x font-semibold px-4 py-2.5 rounded-lg hover:bg-opacity-90 treansition-all shadow-sm">
+                Kembali ke beranda
+            </Link>
+         </div>
+      </section>
+
     </main>
   );
 }

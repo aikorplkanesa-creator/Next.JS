@@ -19,15 +19,15 @@ export default function Proyekcard({ proyek }) {
 
             <div className="p-5">
                 <div className="flex flex-wrap gap-2">
-                    {/* Menggunakan Array.isArray agar aman dari error map jika ada data string */}
+              
                     {Array.isArray(proyek.kategori) ? (
                         proyek.kategori.map((kat, index) => (
                             <span className="rounded-full bg-latar px-3 py-1 text-xs font-semibold text-utama" key={index}>
-                                {kat} {/* <- Menampilkan teks kategori seperti HTML, CSS, dll */}
+                                {kat} 
                             </span>
                         ))
                     ) : (
-                        // Penyelamat jika datanya tidak sengaja ditulis string biasa ("HTML")
+                      
                         proyek.kategori && (
                             <span className="rounded-full bg-latar px-3 py-1 text-xs font-semibold text-utama">
                                 {proyek.kategori}

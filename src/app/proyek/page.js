@@ -16,3 +16,4 @@ detailnya.</p>
  </main>
  );
 }
+
