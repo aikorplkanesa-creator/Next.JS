@@ -1,80 +1,44 @@
 export const proyek = [
     {
         slug: "halaman-profil",
-        judul:"Halaman profil pertama",
-        Kategori: "HTML",
+        judul: "Modul 1 , Web Developer Junior",
+        kategori: ["HTML ", "CSS", "CODEPEN"],
         minggu: "Minggu 01",
         gambar: "/proyek/proyek-kontak.png",
-        deskripsi: "Halaman web pertama saya, dibuat dengan HTML dasar.",
+        deskripsi: "Saya menggunakan CSS dan HTML untuk mengatur text serta perwarnaan di Modul 1 saya",
         fitur: [
-            "Judul dan paragraf perkenalan dengan h1 dan p",
-            "Foto profil dengan atribute alt",
-            "Daftar hobi dengan ul dan li"
+            "menggunakan HTML untuk mengatur text dan judul menggunakan <H1> serta menggunakan <P> untuk paragraf",
+            "menyusun setiap judul dan paragraf dengan jelas",
+            "menggunakan css untuk perwarnaan dan tata letak text yang diinginkan",
         ],
     },
+
+ 
     {
         slug: "form-kontak",
-        judul: "Form kontak",
-        kategori: "HTML",
+        judul: "Modul 2 Responsive Mobile, Web Developer Junior",
+        kategori: ["HTML", "CSS", "Responsive"],
         minggu: "Minggu 02",
-        gambar: "/proyek/proyek-kontak.png",
-        deskripsi: "From dengan label dan validasi bawaan browser.",
+        gambar: "/proyek/proyek.png",
+        deskripsi: "Pada Modul ke 2 saya menggunakna HTML dan CSS untuk menata setiap sudut card, dan agar bisa di akses di Mobile tanpa terjadinya kesalahan/bug yang tidak diinginkan",
         fitur: [
-            "Lima isian dengan label yang terhubung",
-            "Validasi required dan type email",
-            "Pilihan keperluan dengan select",
+            "menggunakan html untuk membuat text dan judul dan class untuk pengenal pada css",
+            "menata text dengan jelas",
+            "menggunakan css untuk pemilihan warna , border serta penataan text",
         ],
     },
     {
         slug: "table-jadwal",
-        judul: "Table-Jadwal Belajar",
-        kategori: "HTML",
-        minggu: "Minggu 02",
-        gambar: "/proyek/proyek-konten.png",
-        deskripsi: "Jadwal belajar mingguan dengan thead dan tbody",
+        judul: "Modul 3 Responsive and Interactive , Web Dveloper Junior",
+        kategori: ["HTML", "CSS", "JavaScript"],
+        minggu: "Minggu 03",
+        gambar: "/proyek/proyek-1.png",
+        deskripsi: "Saya menggunakan HTML , CSS , dan JavaScript , saya menggunakna JavaScript untuk membuat iteraksi pada web saya ",
         fitur: [
-            "Judul Table dengan caption",
-            "Baris Judul di thead",
-            "Tiga kolom: hari, waktu, kegiatan"
+            "menggunakan html untuk menata text dan judul",
+            "css untuk perwarnaan tata letak text dan border",
+            "JavaScript untuk iteractive seperti light dan dark mode"
         ],
     },
-    {
-        slug: "portofolio-responsif",
-        judul: "Portofolio Resposif",
-        Kategori: "CSS",
-        minggu: "Minggu 04",
-        gambar: "/proyek/proyek-konten.png",
-        deskripsi: "Rapi di ponsel, Tablet, dan Laptop dengan Flexbox",
-        fitur: [
-            "Tata letak kartu dengan Flexbox",
-            "Media query mulai lebar 768px",
-            "Diuji di lebar 360, 768, dan 1280 px",
-        ],
-    },
-    {
-        slug: "Kalkulator-nila",
-        judul: "kalkulator Nilai Rapor",
-        kategori: "JavaScript",
-        minggu: "Minggu 06",
-        gambar: "/proyek/proyek-konten.png",
-        deskripsi: "Rata-rata dan predikat nilai dengan fungsi JavaScript.",
-        fitur: [
-            "Fungsi menghitung rata-rata nilai",
-            "Predikat A sampai D dengan if dan else",
-            "Hasil di tampilkan di Console",
-        ],
-    },
-    {
-        slug: "soal-logika",
-        judul: "Lima soal logika",
-        Kategori: "JavaScript",
-        minggu: "Minggu 06",
-        gambar: "/proyek/proyek-konten.png",
-        deskripsi: "Lima fungsi logika yang masing-masing diuji 3 masukan",
-        fitur: [
-            "Ganjil-genap, konversi suhu, dan nilai terbesar",
-            "Tahun kabisat dan harga setelah diskon",
-            "setiap tahun diuji dengan tiga masukkan",
-        ],
-    },
+
 ];

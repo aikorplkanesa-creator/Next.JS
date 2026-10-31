@@ -1,6 +1,6 @@
 import Proyekcard from "@/components/Proyekcard";
 import { proyek } from "@/data/proyek";
-export default function DaftarProyek() {
+export default function Proyek() {
  return (
  <main className="mx-auto max-w-5xl px-4 py-10">
  <h1 className="text-3xl font-bold text-utama

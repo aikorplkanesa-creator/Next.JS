@@ -4,6 +4,11 @@ export default function SkillCard({ nama, level }) {
 shadow-sm">
     <h3 className="text-lg font-semibold text-utama">{nama}</h3>
         <p className="mt-1 text-sm text-gray-600">Level: {level}</p>
+
+        <div className="mt-4 text-xs font-medium text-blue-600">
+            Lihat detail →
+        </div>
    </div>
+
  );
 }
