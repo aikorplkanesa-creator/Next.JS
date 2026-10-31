@@ -77,7 +77,7 @@ export default async function DetailProyek({ params }) {
                     <div className="pt-4 border-t border-gray-100">
                         <Link
                             href="/proyek"
-                            className="inline-block bg-utama-navy text-black text-x font-semibold px-4 py-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-sm"
+                            className="inline-block bg-utama-red text-black text-x font-semibold px-4 py-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-sm"
                         >
                           Lihat semua proyek
                         </Link>
