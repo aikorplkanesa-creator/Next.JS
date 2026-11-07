@@ -10,22 +10,22 @@ export default async function DetailKeahlianpage({params}) {
     }
     return(
         <main className="mx-auto max-w-4xl px-4 py-10">
-            <Link href="/keahlian" className="inline-flex items-center text-sm font-medium text-gray-600 hover: text-utama mb-6 transition-colors">
+            <Link href="/keahlian" className="inline-flex items-center text-sm font-medium text-gray-600 dark:text-gray-400 dark:text-gray-400 hover: text-utama dark:text-sky-200 mb-6 transition-colors">
               ← kembali ke daftar keahlian
             </Link>
 
-        <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm ">
+        <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 shadow-sm ">
             <span className="text-sm font-semibold text-red-700">
                 Tingkat Kemahiran: {data.level}
             </span>
 
-            <h1 className="text-4xl font-bold text-utama mt-2 mb-6">
+            <h1 className="text-4xl font-bold text-utama dark:text-sky-200 mt-2 mb-6">
                 {data.level}
             </h1>
 
             <div className="border-t border-gray-100 pt-6">
-                <h2 className="text-lg font-bold text-utama mb-2">Deskripsi pengalaman</h2>
-                <p className="text-gray-600 leading-relaxed">
+                <h2 className="text-lg font-bold text-utama dark:text-sky-200 mb-2">Deskripsi pengalaman</h2>
+                <p className="text-gray-600 dark:text-gray-400 dark:text-gray-400 leading-relaxed">
                     {data.deskripsi}
                 </p>
             </div>

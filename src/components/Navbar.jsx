@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import TombolTema from "@/components/TombolTema";
+
 
 const menu = [
     { href: "/", label: "Beranda" },
@@ -42,7 +44,7 @@ export default function Navbar() {
                         );
                     })}
                 </ul>
-
+                <TombolTema />
             </nav>
         </header>
     );

@@ -15,8 +15,8 @@ export default function keahlian() {
     <main className="mx-auto max-w-6xl px-4 py-10 flex flex-col items-center">
       
       <div className="text-center mb-10">
-        <h1 className="text-3xl text-utama font-bold">Keahlian saya</h1>
-        <p className="mt-2 text-gray-600">
+        <h1 className="text-3xl text-utama dark:text-sky-200 font-bold">Keahlian saya</h1>
+        <p className="mt-2 text-gray-600 dark:text-gray-400 dark:text-gray-400">
           Daftar kompetensi dan keahlian pengembangan web yang telah saya pelajari.
         </p>
       </div>

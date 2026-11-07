@@ -5,7 +5,7 @@ export const proyek = [
         kategori: ["HTML", "CSS", "Codepen"],
         Minggu:"minggu 01",
         gambar:"/proyek/proyek-kontak.png",
-        deskripsi:"Modul pertama yang saya dibuat menggunkan HTML dan css dasar saat pertama kali coding.",
+        deskripsi:"Modul pertama yang saya buat dengan menggunkan HTML dan css dasar saat pertama kali coding.",
         fitur: [
             "menggunakan HTML untuk mengatur text dan judul menggunakan <H1> serta menggunakan <P> untuk paragraf",
             "menyusun setiap judul dan paragraf dengan jelas",
@@ -18,7 +18,7 @@ export const proyek = [
         kategori:["HTML", "CSS", "Responsive"],
         Minggu:"minggu 02",
         gambar:"/proyek/proyek.png",
-        deskripsi:"Modul-3 yang di buat dengan css dan html, css untuk menyesuaikan besar dan arah text tersebut",
+        deskripsi:"Modul-2 yang di buat dengan css dan html, css untuk menyesuaikan besar dan arah text tersebut",
         fitur:[
              "menggunakan html untuk membuat text dan judul dan class untuk pengenal pada css",
             "menata text dengan jelas",

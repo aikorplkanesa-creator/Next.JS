@@ -5,7 +5,7 @@ export default function Proyekcard({ proyek }) {
     return (
         <Link
             href={`/proyek/${proyek.slug}`}
-            className="block overflow-hidden rounded-xl border border-gray-700 bg-white shadow-sm hover:shadow-md"
+            className="block overflow-hidden rounded-xl border border-gray-700 bg-white dark:bg-gray-800 shadow-sm hover:shadow-md"
         >
             <div className="relative w-full aspect-[16/10] overflow-hidden bg-gray-100">
             <Image
@@ -22,25 +22,25 @@ export default function Proyekcard({ proyek }) {
               
                     {Array.isArray(proyek.kategori) ? (
                         proyek.kategori.map((kat, index) => (
-                            <span className="rounded-full bg-latar px-3 py-1 text-xs font-semibold text-utama" key={index}>
+                            <span className="rounded-full bg-latar dark:bg-gray-900 px-3 py-1 text-xs font-semibold text-utama dark:text-sky-200" key={index}>
                                 {kat} 
                             </span>
                         ))
                     ) : (
                       
                         proyek.kategori && (
-                            <span className="rounded-full bg-latar px-3 py-1 text-xs font-semibold text-utama">
+                            <span className="rounded-full bg-latar dark:bg-gray-900 px-3 py-1 text-xs font-semibold text-utama dark:text-sky-200">
                                 {proyek.kategori}
                             </span>
                         )
                     )}
                 </div>
 
-                <h3 className="mt-3 text-lg font-semibold text-utama">
+                <h3 className="mt-3 text-lg font-semibold text-utama dark:text-sky-200">
                     {proyek.judul}
                 </h3>
 
-                <p className="mt-1 text-sm text-gray-600">
+                <p className="mt-1 text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">
                     {proyek.deskripsi}
                 </p>
             </div>
