@@ -6,7 +6,7 @@ const daftarSkills = [
   { nama: "HTML", level: "Menengah", slug: "HTML" },
   { nama: "CSS", level: "Menengah", slug: "CSS" },
   { nama: "Git dan GitHub", level: "Dasar", slug: "Git dan Github" },
-  { nama: "Desain poster dengan Canva", level: "Mahir", slug: "Desain poster dengan canva" },
+  { nama: "Desain poster dengan Canva", level: "Dasar", slug: "Desain poster dengan canva" },
   { nama: "JavaScript", level: "Dasar", slug: "JavaScript" },
 ];
 
