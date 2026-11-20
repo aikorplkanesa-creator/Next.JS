@@ -1,62 +1,63 @@
-'use client'
-
-import Link from "next/link";
 import FormKontak from "@/components/FormKontak";
+import {
+    Card,
+    CardContent,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card";
 
-export default function kontak() {
+export const metadata = {
+    title: "Kontak",
+    description:
+        "Hubungi Muhammad Aiko Anail Adi melalui form kontak, GitHub, atau email.",
+};
+
+export default function Kontak() {
     return (
-        <main className="mx-auto max-w-6xl px-4 py-10 min-h-screen">
-
-            <h1 className="mb-8 text-3xl font-bold text-primary md:text-4xl">
-                Hubungi saya
+        <main className="mx-auto w-full max-w-5xl px-4 py-10">
+            <h1 className="text-3xl font-bold text-primary md:text-4xl">
+                Hubungi Saya
             </h1>
+            <p className="mt-3 text-lg text-muted-foreground">
+                Punya pertanyaan atau ingin bekerja sama? Isi form berikut.
+            </p>
 
-            <div className="grid gap-6 md:grid-cols-3 w-full">
+            <div className="mt-8 grid gap-6 md:grid-cols-3">
+                <Card className="md:col-span-2">
+                    <CardContent className="pt-6">
+                        <FormKontak />
+                    </CardContent>
+                </Card>
 
-               
-                <section className="rounded-2xl border border-border bg-card p-6 md:p-8 shadow-sm md:col-span-2">
-                    <FormKontak />
-                </section>
-
-                <section className="rounded-2xl border border-border bg-card p-6 md:p-8 shadow-sm flex flex-col justify-between">
-                    <div>
-                        <h2 className="mb-6 text-xl font-bold text-primary">
+                <Card>
+                    <CardHeader>
+                        <CardTitle className="text-2xl font-bold text-primary">
                             Temukan Saya di
-                        </h2>
-
-                        <div className="space-y-6">
-                            <div>
-                                <h3 className="font-semibold text-primary">
-                                    GitHub
-                                </h3>
-                                <Link
+                        </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <ul className="space-y-2">
+                            <li>
+                                <a
                                     href="https://github.com"
                                     target="_blank"
-                                    className="mt-1.5 inline-block text-sm text-aksen hover:underline"
                                     rel="noopener noreferrer"
+                                    className="text-aksen hover:underline"
                                 >
-                                    @aikorplkanesa-creator
-                                </Link>
-                            </div>
-
-                            <div>
-                                <h3 className="font-semibold text-primary">
-                                    Email
-                                </h3>
+                                    GitHub (@aikorplkanesa-creator)
+                                </a>
+                            </li>
+                            <li>
                                 <a
                                     href="mailto:aikorplkanesa@gmail.com"
-                                    className="mt-1.5 inline-block w-full break-all text-sm text-aksen hover:underline"
+                                    className="text-aksen hover:underline"
                                 >
                                     aikorplkanesa@gmail.com
                                 </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="mt-8 pt-4 border-t border-gray-150 text-xs text-gray-400 hidden md:block">
-                        &copy; 2026 Muhammad Aiko Anail Adi. Dibuat dengan Next.js di kelas Industri UBIG.
-                    </div>
-                </section>
-
+                            </li>
+                        </ul>
+                    </CardContent>
+                </Card>
             </div>
         </main>
     );
