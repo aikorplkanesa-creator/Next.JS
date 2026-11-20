@@ -6,9 +6,9 @@ export const metadata = {
 export default function tentang() {
     return(
         <main className="mx-auto max-w-5xl px-4 py-10">
-             <h1 className="text-3xl font-bold text-utama dark:text-sky-200 md: text-4xl">Perkenalan</h1>
-   <section className="mt-8 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 shadow-sm">
-    <h2 className="mb-3 text-2xl font-bold text-utama dark:text-sky-200">
+             <h1 className="text-3xl font-bold text-primary md: text-4xl">Perkenalan</h1>
+   <section className="mt-8 rounded-xl border border-border bg-card p-6 shadow-sm">
+    <h2 className="mb-3 text-2xl font-bold text-primary">
       tentang saya
     </h2>
     <p className="leading-7 text-balck-700">
@@ -17,24 +17,24 @@ export default function tentang() {
    </section>
 
      <section className="mt-6 grid gap-6 md:grid-cols-2">
-        <div className="rounded-xl border border-gray-700 bg-white dark:bg-gray-800 p-6 shadow-sm">
-          <h2 className="mb-3 text-2xl font-bold text-utama dark:text-sky-200">
+        <div className="rounded-xl border border-gray-700 bg-card p-6 shadow-sm">
+          <h2 className="mb-3 text-2xl font-bold text-primary">
             Hobi
           </h2>
-          <ul className="list-inside list-disc space-y-2 text-gray-600 dark:text-gray-400 dark:text-gray-400">
+          <ul className="list-inside list-disc space-y-2 text-muted-foreground dark:text-gray-400">
             <li>Coding</li>
             <li>Membaca komik</li>
             <li>Game</li>
             <li>Joging</li>
           </ul>
         </div>
-        <div className="rounded-xl border border-gray-700 bg-white dark:bg-gray-800 p-6 shadow-sm">
-          <h2 className="mb-3 text-2xl text-utama dark:text-sky-200 font-bold">
+        <div className="rounded-xl border border-gray-700 bg-card p-6 shadow-sm">
+          <h2 className="mb-3 text-2xl text-primary font-bold">
             CITA-CITA
           </h2>
-          <p className="mb-2 text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">Menjadi <strong>Full Stack Web Developer</strong>.
+          <p className="mb-2 text-sm text-muted-foreground dark:text-gray-400">Menjadi <strong>Full Stack Web Developer</strong>.
              Langkah yang saya rencanakan:</p><br></br>
-          <ul className="list-inside list-disc space-y-2 text-gray-600 dark:text-gray-400 dark:text-gray-400">
+          <ul className="list-inside list-disc space-y-2 text-muted-foreground dark:text-gray-400">
             <ol type="1" className="list-decimal pl-5 marker:text-black-700 marker:font-bold">
             <li className="font-normal">.menuntaskan Kelas Industri UBIG sampai semester 4</li>
             <li className="font-normal">.Bekerja Sebagai Web Developer</li>
@@ -43,8 +43,8 @@ export default function tentang() {
           </ul>
         </div>
    </section>
-               <section className="mt-6 rounded-xl border border-gray-700 bg-white dark:bg-gray-800 p-4 shadow-sm">
-        <h2 className="mb-3 text-lg font-bold text-utama dark:text-sky-200">JADWAL BELAJAR</h2>
+               <section className="mt-6 rounded-xl border border-gray-700 bg-card p-4 shadow-sm">
+        <h2 className="mb-3 text-lg font-bold text-primary">JADWAL BELAJAR</h2>
 
         <div className="overflow-x-auto">
           <table className="w-full border-collapse text-left text-xs">

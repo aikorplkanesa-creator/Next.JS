@@ -1,24 +1,36 @@
+
 import Image from "next/image";
 import Link from "next/link";
-import { proyek } from "@/data/proyek";
+import { buttonVariants } from "@/components/ui/button";
+import { supabase } from "@/lib/supabase";
 
 const daftarSkills = [
   { nama: "HTML", level: "Menengah", slug: "HTML" },
   { nama: "CSS", level: "Menengah", slug: "CSS" },
   { nama: "Git dan GitHub", level: "Dasar", slug: "Git dan Github" },
-  { nama: "Desain poster dengan Canva", level: "Mahir", slug: "Desain poster dengan canva" },
+  {
+    nama: "Desain poster dengan Canva",
+    level: "Mahir",
+    slug: "Desain poster dengan canva",
+  },
   { nama: "JavaScript", level: "Dasar", slug: "JavaScript" },
 ];
 
-export default function Home() {
-  const dataProyekTerbaru = proyek.slice(0, 3);
-  
+export default async function Home() {
+  const { data: dataProyekTerbaru, error } = await supabase
+    .from("projects")
+    .select("*")
+    .order("created_at", { ascending: false })
+    .limit(3);
+
+  const daftarProyek = dataProyekTerbaru || [];
+
   return (
     <main className="mx-auto max-w-6xl px-4 py-12 md:py-16">
-      
-      <section className="flex flex-col md:flex-row items-center gap-6 md:gap-8 mb-16 text-center md:text-left">
-        
-        <div className="relative w-36 h-36 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-red-650 shadow-md flex-shrink-0">
+
+      <section className="mb-16 flex flex-col items-center gap-6 text-center md:flex-row md:gap-8 md:text-left">
+
+        <div className="relative h-36 w-36 flex-shrink-0 overflow-hidden rounded-full border-4 border-red-600 shadow-md md:h-40 md:w-40">
           <Image
             src="/foto-profil.png"
             alt="Foto Muhammad Aiko Anail Adi"
@@ -29,101 +41,162 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col justify-center">
-          {/* PERBAIKAN: Mengubah dark:text-sky-200-navy menjadi dark:text-sky-200 */}
-          <h1 className="text-3xl md:text-5xl font-extrabold text-utama dark:text-sky-200 tracking-tight leading-tight">
+
+          <h1 className="text-3xl font-extrabold leading-tight tracking-tight text-primary md:text-5xl">
             Halo, saya Muhammad Aiko Anail Adi!
           </h1>
-          <p className="mt-3 text-sm md:text-base text-gray-600 dark:text-gray-400 font-medium max-w-xl">
+
+          <p className="mt-3 max-w-xl text-sm font-medium text-muted-foreground md:text-base">
             Siswa kelas X SMK, calon Junior Web Developer di Kelas Industri UBIG.
           </p>
 
-          <div className="mt-6 flex flex-wrap gap-3 justify-center md:justify-start">
-            <Link 
-              href="/tentang" 
-              className="bg-red-600 text-white text-xs font-semibold px-4 py-2.5 rounded-lg hover:bg-red-700 transition-all shadow-sm"
+          <div className="mt-6 flex flex-wrap justify-center gap-3 md:justify-start">
+
+            <Link
+              href="/tentang"
+              className="rounded-lg bg-red-600 px-4 py-2.5 text-xs font-semibold text-white shadow-sm transition-all hover:bg-red-700"
             >
               Tentang saya
             </Link>
 
-            <Link 
-              href="#kehalfan-section" 
-              className="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 text-xs font-semibold px-4 py-2.5 rounded-lg hover:bg-gray-50 transition-all shadow-sm"
+            <Link
+              href="#keahlian-section"
+              className="rounded-lg border border-input bg-card px-4 py-2.5 text-xs font-semibold text-gray-700 shadow-sm transition-all hover:bg-gray-50 dark:text-gray-200"
             >
               Lihat keahlian
             </Link>
+
           </div>
         </div>
 
       </section>
 
-      <section id="keahlian-section" className="mt-16 pt-4 border-t border-gray-100">
-        <h2 className="mb-6 text-2xl font-bold text-utama dark:text-sky-200">Keahlian</h2>
-        
+      <section
+        id="keahlian-section"
+        className="mt-16 border-t border-gray-100 pt-4"
+      >
+        <h2 className="mb-6 text-2xl font-bold text-primary">
+          Keahlian
+        </h2>
+
         <div className="grid gap-4 md:grid-cols-3">
+
           {daftarSkills.map((skill) => (
-            <Link 
-              href={`/keahlian/${skill.slug}`} 
-              key={skill.nama} 
+            <Link
+              href={`/keahlian/${skill.slug}`}
+              key={skill.nama}
               className="block transition-transform hover:-translate-y-1"
             >
-              <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 shadow-sm">
-                {/* PERBAIKAN: Mengubah dark:text-sky-200-navy menjadi dark:text-sky-200 */}
-                <h3 className="text-lg font-bold text-utama dark:text-sky-200">{skill.nama}</h3>
-                <p className="text-sm text-gray-500 mt-1">Level: {skill.level}</p>
-                <span className="text-xs text-blue-600 font-semibold mt-4 inline-block hover:underline">
+              <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+
+                <h3 className="text-lg font-bold text-primary">
+                  {skill.nama}
+                </h3>
+
+                <p className="mt-1 text-sm text-gray-500">
+                  Level: {skill.level}
+                </p>
+
+                <span className="mt-4 inline-block text-xs font-semibold text-blue-600 hover:underline">
                   Lihat detail &rarr;
                 </span>
+
               </div>
             </Link>
           ))}
+
         </div>
 
         <div className="mt-6">
-          <Link 
-            href="/keahlian" 
-            className="bg-red-600 text-white text-xs font-semibold px-4 py-2.5 rounded-lg hover:bg-red-700 transition-all shadow-sm"
+          <Link
+            href="/keahlian"
+            className="rounded-lg bg-red-600 px-4 py-2.5 text-xs font-semibold text-white shadow-sm transition-all hover:bg-red-700"
           >
             Lihat semua keahlian
           </Link>
         </div>
       </section>
 
-      <section className="mt-16 border-t border-gray-200 dark:border-gray-700/60 pt-12">
-        <h2 className="mb-6 text-2xl font-bold text-utama dark:text-sky-200">Proyek Terbaru</h2>
-        
-        <div className="grid gap-6 md:grid-cols-3">
-          {dataProyekTerbaru.map((item) => (
-            <Link href={`/proyek/${item.slug}`} key={item.slug} className="block bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+      <section className="mt-16 border-t border-border/60 pt-12">
 
-              <div className="relative w-full aspect-[16/10] bg-mockup-navy flex items-center justify-center p-3">
-                <div className="relative w-full h-full rounded-lg overflow-hidden border border-gray-800">
-                  <Image 
-                    src={item.gambar} 
-                    alt={item.judul} 
-                    fill 
-                    className="object-cover object-top"
-                  />
+        <h2 className="mb-6 text-2xl font-bold text-primary">
+          Proyek Terbaru
+        </h2>
+
+        {error && (
+          <p className="rounded-xl border border-dashed border-input p-6 text-center text-aksen">
+            Data proyek gagal dimuat: {error.message}
+          </p>
+        )}
+
+        {!error && daftarProyek.length === 0 && (
+          <p className="rounded-xl border border-dashed border-input p-6 text-center text-muted-foreground">
+            Belum ada proyek di database.
+          </p>
+        )}
+
+        <div className="grid gap-6 md:grid-cols-3">
+
+          {daftarProyek.map((item) => (
+            <Link
+              href={`/proyek/${item.slug}`}
+              key={item.slug}
+              className="block overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-shadow hover:shadow-md"
+            >
+
+              <div className="relative flex aspect-[16/10] w-full items-center justify-center bg-mockup-navy p-3">
+
+                <div className="relative h-full w-full overflow-hidden rounded-lg border border-gray-800">
+
+                  {item.gambar_url?.trim() ? (
+                    <Image
+                      src={item.gambar_url.trim()}
+                      alt={item.judul || "Gambar proyek"}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover object-top"
+                    />
+                  ) : (
+                    <div className="flex h-full items-center justify-center text-sm text-white">
+                      Gambar belum tersedia
+                    </div>
+                  )}
+
                 </div>
               </div>
 
               <div className="p-5">
-                <span className="text-xs text-gray-400 font-medium">{item.minggu}</span>
-                {/* PERBAIKAN: Mengubah dark:text-sky-200-navy menjadi dark:text-sky-200 */}
-                <h3 className="text-base font-bold text-utama dark:text-sky-200 mt-1 line-clamp-1">{item.judul}</h3>
-                <p className="text-xs text-gray-500 mt-2 line-clamp-2">{item.deskripsi}</p>
+
+                <span className="text-xs font-medium text-gray-400">
+                  {item.minggu}
+                </span>
+
+                <h3 className="mt-1 line-clamp-1 text-base font-bold text-primary">
+                  {item.judul}
+                </h3>
+
+                <p className="mt-2 line-clamp-2 text-xs text-gray-500">
+                  {item.deskripsi}
+                </p>
+
               </div>
             </Link>
           ))}
+
         </div>
-        
+
         <div className="mt-8">
-          <Link 
-            href="/proyek" 
-            className="inline-block bg-black text-white text-xs font-semibold px-5 py-2.5 rounded-lg hover:bg-opacity-90 transition-all shadow-sm"
+          <Link
+            href="/proyek"
+            className={buttonVariants({
+              size: "lg",
+              className: "mt-6",
+            })}
           >
             Lihat semua proyek
           </Link>
         </div>
+
       </section>
 
     </main>

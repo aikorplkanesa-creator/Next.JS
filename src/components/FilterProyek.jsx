@@ -2,14 +2,9 @@
 
 import { useState } from "react";
 import Proyekcard from "./Proyekcard";
+import { Button } from "@/components/ui/button";
 
 const daftarkategori = ["Semua", "HTML", "CSS", "JavaScript", "Next.JS"];
-
-const tombolBiasa =
-  "rounded-full border border-utama dark:border-sky-200 px-4 py-1 text-sm font-semibold text-utama dark:text-sky-200";
-
-const tombolaktif =
-  "rounded-full border border-aksen bg-aksen px-4 py-1 text-sm font-semibold text-white";
 
 export default function FilterProyek({ proyek }) {
   const [kategori, setkategori] = useState("Semua");
@@ -38,18 +33,17 @@ export default function FilterProyek({ proyek }) {
       {/* Navigasi Kategori */}
       <div className="flex flex-wrap gap-2">
         {daftarkategori.map((k) => (
-          <button
+          <Button
             key={k}
-            type="button"
+            variant={kategori === k ? "default" : "outline"}
             onClick={() => setkategori(k)}
-            className={kategori === k ? tombolaktif : tombolBiasa}
           >
             {k}
-          </button>
+          </Button>
         ))}
       </div>
 
-      <p className="mt-4 text-gray-700 dark:text-gray-300">
+      <p className="mt-4 text-muted-foreground">
         Kategori terpilih: {kategori}
       </p>
 
@@ -65,38 +59,38 @@ export default function FilterProyek({ proyek }) {
             id="cari"
             value={kata}
             placeholder="Contoh: Modul-1"
-            className="mt-1 w-full rounded-lg border border-gray-800 bg-white p-2 dark:bg-gray-800 md:w-80"
+            className="mt-1 w-full rounded-lg border border-input bg-card p-2 md:w-80"
             onChange={(e) => setkata(e.target.value)}
           />
 
           {kata !== "" && (
-            <button
-              type="button"
+            <Button
+              variant="link"
               onClick={() => setkata("")}
-              className="mt-2 text-sm font-semibold text-aksen hover:underline dark:text-red-300"
+              className="mt-2 px-0 text-aksen"
             >
               Hapus pencarian
-            </button>
+            </Button>
           )}
         </div>
 
-        <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
+        <p className="mt-4 text-sm text-muted-foreground">
           Menampilkan {hasil.length} dari {proyek.length} proyek
         </p>
       </div>
 
-      {/* Grid Proyek */}
+      
       <div className="mt-6 grid w-full min-w-0 grid-cols-1 items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {hasil.map((item) => (
-          <div key={item.slug} className="w-full min-w-0">
+          <div key={item.slug} className="h-full w-full min-w-0">
             <Proyekcard proyek={item} />
           </div>
         ))}
       </div>
 
-      {/* Pesan Jika Tidak Ada Proyek */}
+
       {hasil.length === 0 && (
-        <p className="mt-6 rounded-xl border-2 border-dashed border-gray-700 bg-white p-6 text-center text-gray-700 dark:bg-gray-800 dark:text-gray-300">
+        <p className="mt-6 rounded-xl border-2 border-dashed border-border bg-card p-6 text-center text-muted-foreground">
           Belum ada proyek yang cocok.
         </p>
       )}

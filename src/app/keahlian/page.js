@@ -14,11 +14,11 @@ export default function Keahlian() {
     <main className="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6 sm:py-10 flex flex-col items-center">
 
       <div className="text-center mb-8 sm:mb-10 w-full">
-        <h1 className="text-2xl sm:text-3xl text-utama dark:text-sky-200 font-bold">
+        <h1 className="text-2xl sm:text-3xl text-primary font-bold">
           Keahlian saya
         </h1>
 
-        <p className="mt-2 text-sm sm:text-base text-gray-600 dark:text-gray-400">
+        <p className="mt-2 text-sm sm:text-base text-muted-foreground">
           Daftar kompetensi dan keahlian pengembangan web yang telah saya pelajari.
         </p>
       </div>

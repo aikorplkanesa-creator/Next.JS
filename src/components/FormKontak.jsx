@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-const kelasInput = "mt-1 w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 p-2";
+const kelasInput = "mt-1 w-full rounded-lg border border-inputbg-card p-2";
 
 export default function FormKontak() {
   const [nama, setNama] = useState("");
@@ -64,7 +64,7 @@ export default function FormKontak() {
             setNama(input.value);
           }} 
         />
-        {error.nama && <p className="mt-1 text-sm text-aksen dark:text-red-300">{error.nama}</p>}
+        {error.nama && <p className="mt-1 text-sm text-aksen">{error.nama}</p>}
       </div>
 
      
@@ -75,7 +75,7 @@ export default function FormKontak() {
             setEmail(e.target.value);
           }}
         />
-        {error.email && <p className="mt-1 text-sm text-aksen dark:text-red-300">{error.email}</p>}
+        {error.email && <p className="mt-1 text-sm text-aksen">{error.email}</p>}
       </div>
 
      
@@ -94,7 +94,7 @@ export default function FormKontak() {
             setHp(input.value);
           }}
         /> 
-        {error.hp && <p className="mt-1 text-sm text-aksen dark:text-red-300">{error.hp}</p>}
+        {error.hp && <p className="mt-1 text-sm text-aksen">{error.hp}</p>}
       </div>
 
       
@@ -108,12 +108,12 @@ export default function FormKontak() {
           <option value="Kerja sama">Kerja sama</option>
           <option value="Lainnya">Lainnya</option>
         </select>
-        {error.keperluan && <p className="mt-1 text-sm text-aksen dark:text-red-300">{error.keperluan}</p>}
+        {error.keperluan && <p className="mt-1 text-sm text-aksen">{error.keperluan}</p>}
       </div>
 
       
       <div>
-        <label htmlFor="pesan" className="block font-semibold text-utama dark:text-sky-200">Pesan</label>
+        <label htmlFor="pesan" className="block font-semibold text-primary">Pesan</label>
         <textarea id="pesan" name="pesan" rows="5" value={pesan} placeholder="Tulis pesan Anda di sini..." required className={`${kelasInput} outline-none focus:border-blue-500`}
           onChange={(e) => {
             const input = e.currentTarget;
@@ -128,7 +128,7 @@ export default function FormKontak() {
           }}
     
         />
-        {error.pesan && <p className="mt-1 text-sm text-aksen dark:text-red-300">{error.pesan}</p>}
+        {error.pesan && <p className="mt-1 text-sm text-aksen">{error.pesan}</p>}
       </div>
 
       

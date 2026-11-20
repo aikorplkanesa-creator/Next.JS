@@ -1,49 +1,44 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
+import {
+  Card,CardDescription,CardHeader,CardTitle,} from "@/components/ui/card";
 
 export default function Proyekcard({ proyek }) {
-    return (
-        <Link
-            href={`/proyek/${proyek.slug}`}
-            className="block overflow-hidden rounded-xl border border-gray-700 bg-white dark:bg-gray-800 shadow-sm hover:shadow-md"
-        >
-            <div className="relative w-full aspect-[16/10] overflow-hidden bg-gray-100">
-            <Image
-                src={proyek.gambar}
-                alt={`Tangkapan layar ${proyek.judul}`}
-                width={640}
-                height={420}
-                className="h-auto w-full"
-            />
-            </div>
+  return (
+    <Link
+      href={`/proyek/${proyek.slug}`}
+      className="block rounded-xl hover:shadow-md"
+    >
+      <Card className="h-full overflow-hidden">
+        <Image
+          src={proyek.gambar_url.trim()}
+          alt={`Tangkapan layar ${proyek.judul}`}
+          width={640}
+          height={420}
+          className="h-auto w-full"
+        />
 
-            <div className="p-5">
-                <div className="flex flex-wrap gap-2">
-              
-                    {Array.isArray(proyek.kategori) ? (
-                        proyek.kategori.map((kat, index) => (
-                            <span className="rounded-full bg-latar dark:bg-gray-900 px-3 py-1 text-xs font-semibold text-utama dark:text-sky-200" key={index}>
-                                {kat} 
-                            </span>
-                        ))
-                    ) : (
-                      
-                        proyek.kategori && (
-                            <span className="rounded-full bg-latar dark:bg-gray-900 px-3 py-1 text-xs font-semibold text-utama dark:text-sky-200">
-                                {proyek.kategori}
-                            </span>
-                        )
-                    )}
-                </div>
+        <CardHeader>
+          <div className="flex flex-wrap gap-2">
+            {Array.isArray(proyek.kategori) ? (
+              proyek.kategori.map((kat, index) => (
+                <Badge key={index}>{kat}</Badge>
+              ))
+            ) : (
+              proyek.kategori && <Badge>{proyek.kategori}</Badge>
+            )}
+          </div>
 
-                <h3 className="mt-3 text-lg font-semibold text-utama dark:text-sky-200">
-                    {proyek.judul}
-                </h3>
+          <CardTitle className="text-lg text-primary">
+            {proyek.judul}
+          </CardTitle>
 
-                <p className="mt-1 text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">
-                    {proyek.deskripsi}
-                </p>
-            </div>
-        </Link>
-    );
+          <CardDescription>
+            {proyek.deskripsi}
+          </CardDescription>
+        </CardHeader>
+      </Card>
+    </Link>
+  );
 }
