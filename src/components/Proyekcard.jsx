@@ -26,7 +26,7 @@ export default function Proyekcard({ proyek }) {
           alt={`Tangkapan layar ${proyek.judul}`}
           width={640}
           height={420}
-          className="h-auto w-full"
+          className="aspect-[16/10] w-full object-cover object-top"
         />
 
         <CardHeader>
@@ -42,7 +42,9 @@ export default function Proyekcard({ proyek }) {
             {proyek.judul}
           </CardTitle>
 
-          <CardDescription>{proyek.deskripsi}</CardDescription>
+          <CardDescription className="line-clamp-3">
+            {proyek.deskripsi}
+          </CardDescription>
         </CardHeader>
       </Card>
     </Link>
