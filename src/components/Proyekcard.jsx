@@ -21,13 +21,15 @@ export default function Proyekcard({ proyek }) {
       className="block rounded-xl hover:shadow-md"
     >
       <Card className="h-full overflow-hidden">
-        <Image
-          src={proyek.gambar_url.trim()}
-          alt={`Tangkapan layar ${proyek.judul}`}
-          width={640}
-          height={420}
-          className="aspect-[16/10] w-full object-cover object-top"
-        />
+        <div className="relative h-48 w-full overflow-hidden">
+          <Image
+            src={proyek.gambar_url.trim()}
+            alt={`Tangkapan layar ${proyek.judul}`}
+            fill
+            sizes="(max-width: 768px) 100vw, 33vw"
+            className="object-cover object-top"
+          />
+        </div>
 
         <CardHeader>
           <div className="flex flex-wrap gap-2">
